@@ -1,5 +1,5 @@
 <div class="right message">
-  <p>{{$message}}-{{$user_id}}</p>
+  <p>{{$message}}</p>
   @if(isset($fileUrl) && !empty($fileUrl))
   <img src="{{ $fileUrl }}" alt="Attached File">
   @endif

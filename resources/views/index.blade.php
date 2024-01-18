@@ -24,7 +24,7 @@
     <div class="top">
       <img src="https://assets.edlin.app/images/rossedlin/03/rossedlin-03-100.jpg" alt="Avatar">
       <div>
-        <p>Ross Edlin</p>
+        <p>{{ auth()->user()->name }}</p>
         <small>Online</small>
       </div>
     </div>
@@ -33,7 +33,6 @@
     <!-- Chat -->
     <div class="messages">
       @include('receive', ['message' => "Hey! What's up!  👋", 'user_id' => 11])
-      @include('receive', ['message' => "Ask a friend to open this link and you can chat with them!", 'user_id' => 11])
     </div>
     <!-- End Chat -->
 

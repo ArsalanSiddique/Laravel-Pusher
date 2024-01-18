@@ -3,5 +3,5 @@
   @if(isset($fileUrl) && !empty($fileUrl))
   <img src="{{ $fileUrl }}" alt="Attached File">
   @endif
-  <p>{{$message}} - {{$user_id ?? ''}}</p>
+  <p>{{$message}}</p>
 </div>

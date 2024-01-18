@@ -13,14 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/',             [App\Http\Controllers\PusherController::class, 'index']);
-Route::post('/broadcast',   [App\Http\Controllers\PusherController::class, 'broadcast']);
-Route::post('/receive',     [App\Http\Controllers\PusherController::class, 'receive']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/',             [App\Http\Controllers\PusherController::class, 'index']);
+    Route::post('/broadcast',   [App\Http\Controllers\PusherController::class, 'broadcast']);
+    Route::post('/receive',     [App\Http\Controllers\PusherController::class, 'receive']);
+});
